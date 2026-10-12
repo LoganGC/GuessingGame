@@ -1,12 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adivina el Número</title>
 </head>
 <body>
+
+    <h1>Juego: Adivina el Número Secreto</h1>
+
+    <!-- Menú principal original -->
     <p><a href="1player.html">1 Player</a></p>
-    <p>2 Player</p>
+    <p><a href="2players_setup.html">2 Players</a></p>
+
+    <hr>
+
+    <!-- Estructura del Modo 1 Jugador (1player.html) -->
+    <h2>Modo 1 Jugador (Contra la Computadora)</h2>
+    <p>La computadora ha pensado un número del 1 al 100.</p>
+    <form action="1player.html" method="get">
+        <label for="numero_1p">Adivina el número:</label>
+        <input type="number" id="numero_1p" name="intento" min="1" max="100" required>
+        <input type="submit" value="Adivinar">
+    </form>
+
+    <hr>
+
+    <!-- Estructura del Modo 2 Jugadores: Paso 1 (2players_setup.html) -->
+    <h2>Modo 2 Jugadores - Configuración Inicial</h2>
+    
+    <form action="2players_game.html" method="get">
+        <h3>Jugador 1</h3>
+        <label for="secreto_p1">Ingresa tu número secreto para que el Jugador 2 lo adivine:</label>
+        <input type="password" id="secreto_p1" name="secreto_p1" min="1" max="100" required>
+
+        <h3>Jugador 2</h3>
+        <label for="secreto_p2">Ingresa tu número secreto para que el Jugador 1 lo adivine:</label>
+        <input type="password" id="secreto_p2" name="secreto_p2" min="1" max="100" required>
+        
+        <br><br>
+        <input type="submit" value="Comenzar Juego">
+    </form>
+
+    <hr>
+
+    <!-- Estructura del Modo 2 Jugadores: Pantalla de Juego Turno a Turno (2players_game.html) -->
+    <h2>Modo 2 Jugadores - En Juego</h2>
+
+    <!-- Turno Jugador 1 -->
+    <fieldset>
+        <legend>Turno de Jugador 1</legend>
+        <p>Intenta adivinar el número del Jugador 2:</p>
+        <form action="2players_game.html" method="get">
+            <label for="intento_p1">Tu número:</label>
+            <input type="number" id="intento_p1" name="intento_p1" min="1" max="100" required>
+            <input type="submit" value="Enviar Intento J1">
+        </form>
+    </fieldset>
+
+    <br>
+
+    <!-- Turno Jugador 2 -->
+    <fieldset>
+        <legend>Turno de Jugador 2</legend>
+        <p>Intenta adivinar el número del Jugador 1:</p>
+        <form action="2players_game.html" method="get">
+            <label for="intento_p2">Tu número:</label>
+            <input type="number" id="intento_p2" name="intento_p2" min="1" max="100" required>
+            <input type="submit" value="Enviar Intento J2">
+        </form>
+    </fieldset>
+
 </body>
 </html>
