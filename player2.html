@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Player Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>2 Player Mode</h1>
+
+        <!-- Step 1: Player One sets secret number -->
+        <div id="setupStep">
+            <p>Player 1: Set the secret number for Player 2 to guess.</p>
+            <div class="input-group">
+                <label for="secretNum">Secret Number:</label>
+                <!-- Type password hides the number so Player 2 can't peek! -->
+                <input type="password" id="secretNum" placeholder="Enter secret number">
+                <button class="btn" onclick="setSecretNumber()">Lock In Number</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Player Two guesses -->
+        <div id="guessStep" class="hidden">
+            <p>Player 2: Take a guess!</p>
+            <div class="input-group">
+                <label for="p2Guess">Your Guess:</label>
+                <input type="number" id="p2Guess" placeholder="Enter your guess">
+                <button class="btn" onclick="makeGuessPlayer2()">Submit Guess</button>
+            </div>
+        </div>
+
+        <p id="feedback"></p>
+        <a href="index.html" class="btn btn-secondary">Back to Menu</a>
+    </div>
+
+    <script src="guessingGame.js"></script>
+</body>
+</html>
