@@ -36,5 +36,114 @@
     </div>
 
     <script src="guessingGame.js"></script>
+    <style> :root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --accent: #06b6d4;
+    --accent-hover: #0891b2;
+    --text: #f0f6fc;
+    --muted: #8b949e;
+    --border: #30363d;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: var(--accent);
+    margin-top: 0;
+}
+
+p {
+    color: var(--muted);
+}
+
+.input-group {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: #0d1117;
+    color: var(--text);
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+input[type="number"]:focus {
+    outline: 2px solid var(--accent);
+}
+
+.btn {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent);
+    color: #0d1117;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--border);
+    color: var(--text);
+}
+
+#feedback {
+    margin-top: 1rem;
+    font-weight: bold;
+    min-height: 1.5em;
+}
+.success { color: #3fb950; }
+.error { color: #f85149; }
+    </style>
 </body>
 </html>
